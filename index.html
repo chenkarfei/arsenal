@@ -600,6 +600,100 @@
       text-transform: uppercase;
     }
 
+    /* ── LEAGUE TABLE ────────────────────────────── */
+    .table-section {
+      padding: 5rem 2rem;
+      background: var(--dark2);
+    }
+
+    .league-table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: clamp(0.75rem, 1.5vw, 0.88rem);
+    }
+
+    .league-table thead tr {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .league-table th {
+      padding: 0.55rem 0.6rem;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+    }
+
+    .league-table th:nth-child(2) { text-align: left; }
+
+    .league-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+
+    .league-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+    .league-table td {
+      padding: 0.65rem 0.6rem;
+      text-align: center;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .league-table td:nth-child(2) { text-align: left; }
+
+    .league-table tbody tr.arsenal-row {
+      background: rgba(239,1,7,0.12);
+    }
+
+    .league-table tbody tr.arsenal-row td {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .league-table tbody tr.arsenal-row .team-pos {
+      color: var(--gold);
+    }
+
+    .league-table .team-pos {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      width: 28px;
+    }
+
+    .league-table .team-name { font-weight: 500; }
+
+    .league-table .pts-col {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1em;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .legend-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.6rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+    }
+
+    .legend-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
     /* ── DATA SOURCE ──────────────────────────────── */
     .source-note {
       background: var(--dark2);
@@ -710,12 +804,12 @@
   <p class="label">2025/26 Premier League &mdash; Final Season Stats</p>
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-num" data-target="37">0</div>
+      <div class="stat-num" data-target="38">0</div>
       <div class="stat-lbl">Played</div>
     </div>
     <div class="stat-sep"></div>
     <div class="stat-item">
-      <div class="stat-num" data-target="25">0</div>
+      <div class="stat-num" data-target="26">0</div>
       <div class="stat-lbl">Won</div>
     </div>
     <div class="stat-sep"></div>
@@ -730,22 +824,22 @@
     </div>
     <div class="stat-sep"></div>
     <div class="stat-item">
-      <div class="stat-num" data-target="82">0</div>
+      <div class="stat-num" data-target="85">0</div>
       <div class="stat-lbl">Points</div>
     </div>
     <div class="stat-sep"></div>
     <div class="stat-item">
-      <div class="stat-num" data-target="69">0</div>
+      <div class="stat-num" data-target="71">0</div>
       <div class="stat-lbl">Goals For</div>
     </div>
     <div class="stat-sep"></div>
     <div class="stat-item">
-      <div class="stat-num" data-target="26">0</div>
+      <div class="stat-num" data-target="27">0</div>
       <div class="stat-lbl">Against</div>
     </div>
     <div class="stat-sep"></div>
     <div class="stat-item">
-      <div class="stat-num" data-target="43">0</div>
+      <div class="stat-num" data-target="44">0</div>
       <div class="stat-lbl">Goal Diff</div>
     </div>
   </div>
@@ -984,6 +1078,182 @@
         <div class="p-stat"><div class="n">3</div><div class="l">Assists</div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FINAL STANDINGS (real data from ESPN)
+═══════════════════════════════════════════ -->
+<section class="table-section">
+  <div class="section-head reveal">
+    <div class="section-tag">Final Standings</div>
+    <h2 class="section-title">2025/26 Premier League Table</h2>
+  </div>
+
+  <table class="league-table reveal">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Team</th>
+        <th>GP</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>GF</th>
+        <th>GA</th>
+        <th>GD</th>
+        <th>PTS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="arsenal-row">
+        <td class="team-pos">1</td>
+        <td class="team-name">Arsenal &#x1F3C6;</td>
+        <td>38</td><td>26</td><td>7</td><td>5</td>
+        <td>71</td><td>27</td><td>+44</td>
+        <td class="pts-col">85</td>
+      </tr>
+      <tr>
+        <td class="team-pos">2</td>
+        <td class="team-name">Manchester City</td>
+        <td>38</td><td>23</td><td>9</td><td>6</td>
+        <td>77</td><td>35</td><td>+42</td>
+        <td class="pts-col">78</td>
+      </tr>
+      <tr>
+        <td class="team-pos">3</td>
+        <td class="team-name">Manchester United</td>
+        <td>38</td><td>20</td><td>11</td><td>7</td>
+        <td>69</td><td>50</td><td>+19</td>
+        <td class="pts-col">71</td>
+      </tr>
+      <tr>
+        <td class="team-pos">4</td>
+        <td class="team-name">Aston Villa</td>
+        <td>38</td><td>19</td><td>8</td><td>11</td>
+        <td>56</td><td>49</td><td>+7</td>
+        <td class="pts-col">65</td>
+      </tr>
+      <tr>
+        <td class="team-pos">5</td>
+        <td class="team-name">Liverpool</td>
+        <td>38</td><td>17</td><td>9</td><td>12</td>
+        <td>63</td><td>53</td><td>+10</td>
+        <td class="pts-col">60</td>
+      </tr>
+      <tr>
+        <td class="team-pos">6</td>
+        <td class="team-name">AFC Bournemouth</td>
+        <td>38</td><td>13</td><td>18</td><td>7</td>
+        <td>58</td><td>54</td><td>+4</td>
+        <td class="pts-col">57</td>
+      </tr>
+      <tr>
+        <td class="team-pos">7</td>
+        <td class="team-name">Sunderland</td>
+        <td>38</td><td>14</td><td>12</td><td>12</td>
+        <td>42</td><td>48</td><td>&minus;6</td>
+        <td class="pts-col">54</td>
+      </tr>
+      <tr>
+        <td class="team-pos">8</td>
+        <td class="team-name">Brighton &amp; Hove Albion</td>
+        <td>38</td><td>14</td><td>11</td><td>13</td>
+        <td>52</td><td>46</td><td>+6</td>
+        <td class="pts-col">53</td>
+      </tr>
+      <tr>
+        <td class="team-pos">9</td>
+        <td class="team-name">Brentford</td>
+        <td>38</td><td>14</td><td>11</td><td>13</td>
+        <td>55</td><td>52</td><td>+3</td>
+        <td class="pts-col">53</td>
+      </tr>
+      <tr>
+        <td class="team-pos">10</td>
+        <td class="team-name">Chelsea</td>
+        <td>38</td><td>15</td><td>7</td><td>16</td>
+        <td>47</td><td>51</td><td>&minus;4</td>
+        <td class="pts-col">52</td>
+      </tr>
+      <tr>
+        <td class="team-pos">11</td>
+        <td class="team-name">Fulham</td>
+        <td>38</td><td>14</td><td>7</td><td>17</td>
+        <td>53</td><td>55</td><td>&minus;2</td>
+        <td class="pts-col">49</td>
+      </tr>
+      <tr>
+        <td class="team-pos">12</td>
+        <td class="team-name">Newcastle United</td>
+        <td>38</td><td>13</td><td>10</td><td>15</td>
+        <td>47</td><td>50</td><td>&minus;3</td>
+        <td class="pts-col">49</td>
+      </tr>
+      <tr>
+        <td class="team-pos">13</td>
+        <td class="team-name">Everton</td>
+        <td>38</td><td>11</td><td>14</td><td>13</td>
+        <td>49</td><td>56</td><td>&minus;7</td>
+        <td class="pts-col">47</td>
+      </tr>
+      <tr>
+        <td class="team-pos">14</td>
+        <td class="team-name">Leeds United</td>
+        <td>38</td><td>11</td><td>12</td><td>15</td>
+        <td>41</td><td>51</td><td>&minus;10</td>
+        <td class="pts-col">45</td>
+      </tr>
+      <tr>
+        <td class="team-pos">15</td>
+        <td class="team-name">Crystal Palace</td>
+        <td>38</td><td>11</td><td>11</td><td>16</td>
+        <td>48</td><td>51</td><td>&minus;3</td>
+        <td class="pts-col">44</td>
+      </tr>
+      <tr>
+        <td class="team-pos">16</td>
+        <td class="team-name">Nottingham Forest</td>
+        <td>38</td><td>10</td><td>11</td><td>17</td>
+        <td>48</td><td>57</td><td>&minus;9</td>
+        <td class="pts-col">41</td>
+      </tr>
+      <tr>
+        <td class="team-pos">17</td>
+        <td class="team-name">Tottenham Hotspur</td>
+        <td>38</td><td>10</td><td>9</td><td>19</td>
+        <td>46</td><td>65</td><td>&minus;19</td>
+        <td class="pts-col">39</td>
+      </tr>
+      <tr>
+        <td class="team-pos">18</td>
+        <td class="team-name">West Ham United</td>
+        <td>38</td><td>4</td><td>10</td><td>24</td>
+        <td>38</td><td>75</td><td>&minus;37</td>
+        <td class="pts-col">22</td>
+      </tr>
+      <tr>
+        <td class="team-pos">19</td>
+        <td class="team-name">Burnley</td>
+        <td>38</td><td>3</td><td>11</td><td>24</td>
+        <td>27</td><td>68</td><td>&minus;41</td>
+        <td class="pts-col">20</td>
+      </tr>
+      <tr>
+        <td class="team-pos">20</td>
+        <td class="team-name">Wolverhampton Wanderers</td>
+        <td>38</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+        <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+        <td class="pts-col">&mdash;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="legend-row">
+    <span><span class="legend-dot" style="background:#4a90d9"></span>Champions League (1&ndash;5)</span>
+    <span><span class="legend-dot" style="background:#f5a623"></span>Europa League (6&ndash;7)</span>
+    <span><span class="legend-dot" style="background:#7ed321"></span>Conference League PO (8)</span>
+    <span><span class="legend-dot" style="background:#d0021b"></span>Relegation (18&ndash;20)</span>
   </div>
 </section>
 
